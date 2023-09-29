@@ -1,14 +1,15 @@
 <script>
-    import TodoList from "./TodoList.svelte"
+    import { createTodoStore } from "../todos.js";
+    import TodoList from "./TodoList.svelte";
 
-    const todos = [
+    const todos = createTodoStore([
         { done: false, description: "write some docs" },
         { done: false, description: "start writing blog post" },
         { done: true, description: "buy some milk" },
         { done: false, description: "mow the lawn" },
         { done: false, description: "feed the turtle" },
         { done: false, description: "fix some bugs" },
-    ]
+    ]);
 </script>
 
 <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
@@ -19,6 +20,12 @@
                 type="text"
                 placeholder="what needs to be done?"
                 required
+                on:keydown={(e) => {
+                    if (e.key === "Enter") {
+                        todos.add(e.currentTarget.value);
+                        e.currentTarget.value = "";
+                    }
+                }}
                 class="mt-2 block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             />
         </div>
