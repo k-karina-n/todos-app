@@ -7,6 +7,7 @@
 
     <title>todos</title>
 
+    @vite('resources/css/app.css')
     @vite('resources/js/app.js')
     @inertiaHead
 </head>
