@@ -11,6 +11,6 @@ class Todo extends Model
 
     protected $attributes = [
         'description',
-        'done' => false,
+        'done'
     ];
 }
