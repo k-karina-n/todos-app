@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Inertia\Inertia;
 
-class TodoListController extends Controller
+class TodosController extends Controller
 {
     public function show()
     {
-        return Inertia::render('TodoList');
+        return Inertia::render('Todos');
     }
 }

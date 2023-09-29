@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TodoListController;
+use App\Http\Controllers\TodosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +14,4 @@ use App\Http\Controllers\TodoListController;
 |
 */
 
-Route::get('/', [TodoListController::class, 'show']);
+Route::get('/', [TodosController::class, 'show']);
