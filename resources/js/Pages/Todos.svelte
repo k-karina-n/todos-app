@@ -1,3 +1,16 @@
+<script>
+    import TodoList from "./TodoList.svelte"
+
+    const todos = [
+        { done: false, description: "write some docs" },
+        { done: false, description: "start writing blog post" },
+        { done: true, description: "buy some milk" },
+        { done: false, description: "mow the lawn" },
+        { done: false, description: "feed the turtle" },
+        { done: false, description: "fix some bugs" },
+    ]
+</script>
+
 <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
     <div class="text-center mx-auto max-w-2xl space-y-2">
         <div>
@@ -12,10 +25,12 @@
 
         <div>
             <h2 class="text-xl text-gray-700 font-bold">todo</h2>
+            <TodoList {todos} done={false} />
         </div>
 
         <div>
             <h2 class="text-xl text-gray-700 font-bold">done</h2>
+            <TodoList {todos} done={true} />
         </div>
     </div>
 </div>
