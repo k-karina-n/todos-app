@@ -8,12 +8,13 @@ use App\Models\Todo;
 
 class TodosController extends Controller
 {
-    public function show()
+    public function show(Todo $todo)
     {
         $csrfToken = csrf_token();
 
         return Inertia::render('Todos', [
-            'csrfToken' => $csrfToken
+            'csrfToken' => $csrfToken,
+            'todos' => $todo->all()->toArray()
         ]);
     }
 

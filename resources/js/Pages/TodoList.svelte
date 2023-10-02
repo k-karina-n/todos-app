@@ -6,7 +6,7 @@
     export let done;
 </script>
 
-<ul>
+<!-- <ul>
     {#each $todos.filter((todo) => todo.done === done) as todo (todo.id)}
         <li
             in:receive={{ key: todo.id }}
@@ -33,4 +33,4 @@
             </label>
         </li>
     {/each}
-</ul>
+</ul> -->

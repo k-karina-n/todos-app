@@ -1,16 +1,8 @@
 <script>
-    import { createTodoStore } from "../todos.js";
     import TodoList from "./TodoList.svelte";
-    export let csrfToken;
 
-    const todos = createTodoStore([
-        { done: false, description: "write some docs" },
-        { done: false, description: "start writing blog post" },
-        { done: true, description: "buy some milk" },
-        { done: false, description: "mow the lawn" },
-        { done: false, description: "feed the turtle" },
-        { done: false, description: "fix some bugs" },
-    ]);
+    export let csrfToken;
+    export let todos;
 </script>
 
 <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
