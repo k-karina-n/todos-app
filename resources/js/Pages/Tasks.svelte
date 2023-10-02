@@ -1,18 +1,25 @@
 <script>
+    import { router } from "@inertiajs/svelte";
     import TaskList from "./TaskList.svelte";
 
-    export let csrfToken;
     export let tasks;
+
+    let values = {
+        todo: null,
+    };
+
+    function handleSubmit() {
+        router.post("/tasks", values);
+    }
 </script>
 
 <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
     <div class="text-center mx-auto max-w-2xl space-y-2">
         <div>
             <h1 class="text-2xl text-gray-700 font-bold">TASKS</h1>
-            <form action="/tasks" method="POST">
-                <input type="hidden" name="_token" value={csrfToken} />
+            <form on:submit|preventDefault={handleSubmit}>
                 <input
-                    name="todo"
+                    bind:value={values.todo}
                     type="text"
                     placeholder="what needs to be done?"
                     required

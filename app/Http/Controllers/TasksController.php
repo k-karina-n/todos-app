@@ -10,10 +10,7 @@ class TasksController extends Controller
 {
     public function index(Task $task)
     {
-        $csrfToken = csrf_token();
-
         return Inertia::render('Tasks', [
-            'csrfToken' => $csrfToken,
             'tasks' => $task->all()->toArray()
         ]);
     }
