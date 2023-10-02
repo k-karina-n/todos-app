@@ -14,4 +14,7 @@ use App\Http\Controllers\TodosController;
 |
 */
 
-Route::get('/', [TodosController::class, 'show']);
+Route::controller(TodosController::class)->group(function () {
+    Route::get('/', 'show');
+    Route::post('/', 'create');
+});
