@@ -9,7 +9,7 @@
     <div class="text-center mx-auto max-w-2xl space-y-2">
         <div>
             <h1 class="text-2xl text-gray-700 font-bold">TODOS</h1>
-            <form action="/" method="POST">
+            <form action="/tasks" method="POST">
                 <input type="hidden" name="_token" value={csrfToken} />
                 <input
                     name="todo"

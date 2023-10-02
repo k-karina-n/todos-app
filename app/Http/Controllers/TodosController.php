@@ -8,7 +8,7 @@ use App\Models\Todo;
 
 class TodosController extends Controller
 {
-    public function show(Todo $todo)
+    public function index(Todo $todo)
     {
         $csrfToken = csrf_token();
 
@@ -18,17 +18,24 @@ class TodosController extends Controller
         ]);
     }
 
-    public function create(Request $request)
+    public function store(Request $request)
     {
         Todo::insert([
             'description' => $request->input('todo'),
         ]);
 
-        return redirect('/');
+        return redirect('/tasks');
     }
 
-    public function mark()
+    public function update()
     {
-        dd('success');
+    }
+
+    public function check()
+    {
+    }
+
+    public function delete()
+    {
     }
 }

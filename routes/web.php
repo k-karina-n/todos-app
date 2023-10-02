@@ -15,8 +15,9 @@ use App\Http\Controllers\TodosController;
 */
 
 Route::controller(TodosController::class)->group(function () {
-    Route::get('/', 'show');
-    Route::post('/', 'create');
-    Route::post('/mark/{id}', 'update');
-    Route::post('/remove/{id}', 'delete');
+    Route::get('/tasks', 'index');
+    Route::post('/tasks', 'store');
+    Route::put('/tasks/{id}', 'update');
+    Route::put('/tasks/{id}/check', 'check');
+    Route::delete('/tasks/{id}', 'delete');
 });
