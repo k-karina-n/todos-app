@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TodosController;
+use App\Http\Controllers\TasksController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +14,7 @@ use App\Http\Controllers\TodosController;
 |
 */
 
-Route::controller(TodosController::class)->group(function () {
+Route::controller(TasksController::class)->group(function () {
     Route::get('/tasks', 'index');
     Route::post('/tasks', 'store');
     Route::put('/tasks/{id}', 'update');

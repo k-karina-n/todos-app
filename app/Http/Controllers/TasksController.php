@@ -4,23 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Inertia\Inertia;
-use App\Models\Todo;
+use App\Models\Task;
 
-class TodosController extends Controller
+class TasksController extends Controller
 {
-    public function index(Todo $todo)
+    public function index(Task $task)
     {
         $csrfToken = csrf_token();
 
-        return Inertia::render('Todos', [
+        return Inertia::render('Tasks', [
             'csrfToken' => $csrfToken,
-            'todos' => $todo->all()->toArray()
+            'tasks' => $task->all()->toArray()
         ]);
     }
 
     public function store(Request $request)
     {
-        Todo::insert([
+        Task::insert([
             'description' => $request->input('todo'),
         ]);
 
