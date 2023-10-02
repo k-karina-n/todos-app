@@ -24,12 +24,12 @@
 
         <div>
             <h2 class="text-xl text-gray-700 font-bold">todo</h2>
-            <TodoList {todos} done={false} />
+            <TodoList {todos} done={0} />
         </div>
 
         <div>
             <h2 class="text-xl text-gray-700 font-bold">done</h2>
-            <TodoList {todos} done={true} />
+            <TodoList {todos} done={1} />
         </div>
     </div>
 </div>
