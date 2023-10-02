@@ -18,7 +18,7 @@ class TasksController extends Controller
     public function store(Request $request)
     {
         Task::insert([
-            'description' => $request->input('todo'),
+            'description' => $request->input('task'),
         ]);
 
         return redirect('/tasks');
@@ -26,13 +26,16 @@ class TasksController extends Controller
 
     public function update()
     {
+        // edit task
     }
 
     public function check()
     {
+        // add or remove a checkmark 
     }
 
     public function delete()
     {
+        //delete a task
     }
 }

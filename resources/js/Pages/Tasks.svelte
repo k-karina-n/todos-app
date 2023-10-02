@@ -1,15 +1,18 @@
 <script>
-    import { router } from "@inertiajs/svelte";
-    import TaskList from "./TaskList.svelte";
+    import { useForm } from "@inertiajs/svelte"
+    import TaskList from "./TaskList.svelte"
 
-    export let tasks;
+    export let tasks
 
-    let values = {
-        todo: null,
-    };
+    let form = useForm({
+        task: null,
+        remember: false,
+    });
 
-    function handleSubmit() {
-        router.post("/tasks", values);
+    function submit() {
+        $form.post('/tasks', {
+            onSuccess: () => $form.reset('task'),
+        })
     }
 </script>
 
@@ -17,9 +20,9 @@
     <div class="text-center mx-auto max-w-2xl space-y-2">
         <div>
             <h1 class="text-2xl text-gray-700 font-bold">TASKS</h1>
-            <form on:submit|preventDefault={handleSubmit}>
+            <form on:submit|preventDefault={submit}>
                 <input
-                    bind:value={values.todo}
+                    bind:value={$form.task}
                     type="text"
                     placeholder="what needs to be done?"
                     required
