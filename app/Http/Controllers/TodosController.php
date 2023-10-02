@@ -26,4 +26,9 @@ class TodosController extends Controller
 
         return redirect('/');
     }
+
+    public function mark()
+    {
+        dd('success');
+    }
 }
