@@ -31,7 +31,11 @@ class TasksController extends Controller
 
     public function check(int $id)
     {
-        // add or remove a checkmark 
+        $task = Task::findOrFail($id);
+
+        $task->done ? $task->update(['done' => 0]) : $task->update(['done' => 1]);
+
+        return redirect('/tasks');
     }
 
     public function destroy(int $id)

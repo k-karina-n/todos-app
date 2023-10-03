@@ -7,6 +7,7 @@
     export let done;
 
     function check(task) {
+        router.put(`/tasks/${task}/check`)
     }
 
     function remove(task) {
@@ -25,7 +26,7 @@
                     in:receive={{ key: task.id }}
                     out:send={{ key: task.id }}
                     type="checkbox"
-                    on:change={() => check(task)}
+                    on:change={() => check(task.id)}
                 />
 
                 <span>{task.description}</span>
