@@ -24,18 +24,20 @@ class TasksController extends Controller
         return redirect('/tasks');
     }
 
-    public function update()
+    public function update(int $id)
     {
         // edit task
     }
 
-    public function check()
+    public function check(int $id)
     {
         // add or remove a checkmark 
     }
 
-    public function delete()
+    public function destroy(int $id)
     {
-        //delete a task
+        Task::destroy($id);
+
+        return redirect('/tasks');
     }
 }

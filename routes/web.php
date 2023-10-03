@@ -19,5 +19,5 @@ Route::controller(TasksController::class)->group(function () {
     Route::post('/tasks', 'store');
     Route::put('/tasks/{id}', 'update');
     Route::put('/tasks/{id}/check', 'check');
-    Route::delete('/tasks/{id}', 'delete');
+    Route::delete('/tasks/{id}', 'destroy');
 });
