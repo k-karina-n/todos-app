@@ -24,9 +24,13 @@ class TasksController extends Controller
         return redirect('/tasks');
     }
 
-    public function update(int $id)
+    public function update(Request $request, int $id)
     {
-        // edit task
+        $task = Task::findOrFail($id);
+
+        $task->update(['description' => $request->input('description')]);
+
+        return redirect('/tasks');
     }
 
     public function check(int $id)
