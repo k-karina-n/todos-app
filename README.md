@@ -1,6 +1,6 @@
 # Todos App
 
-Test app for creating tasks. Built with [Svelte](https://svelte.dev/)
+Test app for creating tasks. Built with [Inertia](https://inertiajs.com/) and [Svelte](https://svelte.dev/).
 
 ## Getting Started
 These instructions will give you a copy of the project and running on your local machine for development and testing purposes. 
